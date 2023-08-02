@@ -17,13 +17,13 @@ spec:
     spec:
       containers:
           image: 'quay.io/jonatang/app-dev-lab:v2'
-        - resources: {}
-          terminationMessagePath: /dev/termination-log
-          name: hello-world
-          ports:
-            - containerPort: 8080
-              protocol: TCP
-          imagePullPolicy: IfNotPresent
+        # - resources: {}
+        #   terminationMessagePath: /dev/termination-log
+        #   name: hello-world
+        #   ports:
+        #     - containerPort: 8080
+        #       protocol: TCP
+        #   imagePullPolicy: IfNotPresent
 # update with the image you build in part 1
           image: 'quay.io/jonatang/app-dev-lab:v1'
       restartPolicy: Always
