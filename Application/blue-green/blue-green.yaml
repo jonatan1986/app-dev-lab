@@ -10,6 +10,6 @@ spec:
     name: jonatang-hello-chart-service
     weight: 90
   alternateBackends:
-  - kind: Service
+    kind: Service
     name: jonatang-hello-world
     weight: 10
