@@ -18,13 +18,15 @@ spec:
       containers:
         - resources: {}
           terminationMessagePath: /dev/termination-log
+          # name: hello-world
           name: hello-world
+          image: 'quay.io/jonatang/app-dev-lab:v2'
           ports:
             - containerPort: 8080
               protocol: TCP
           imagePullPolicy: IfNotPresent
 # update with the image you build in part 1
-          image: 'quay.io/jonatang/app-dev-lab:v1'
+          # image: 'quay.io/jonatang/app-dev-lab:v1'
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
   strategy:
