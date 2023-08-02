@@ -16,7 +16,6 @@ spec:
         app: jonatang-hello-world
     spec:
       containers:
-          image: 'quay.io/jonatang/app-dev-lab:v2'
         - resources: {}
           terminationMessagePath: /dev/termination-log
           name: hello-world
