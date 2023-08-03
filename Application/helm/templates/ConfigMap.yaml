@@ -4,7 +4,6 @@ metadata:
   name: index.html
 immutable: false
 data:
-  # {{ (.Files.Glob "html/*").AsConfig | indent 2 }}
   index.html: |-
     <html>
     <head>
