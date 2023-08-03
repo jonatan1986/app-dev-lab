@@ -9,22 +9,17 @@ spec:
     matchLabels:
 # set your lab user name
       app: {{ .Release.Name }}
-  template:  
+  template:
+    metadata:
+      labels:
+# set your lab user name
+        app: {{ .Release.Name }}
     spec:
       volumes:
         - name: index-html
           configMap:
             name: index.html
             defaultMode: 420
-      containers:
-          volumeMounts:
-          - name: index-html
-            mountPath: /tmp/html
-    metadata:
-      labels:
-# set your lab user name
-        app: {{ .Release.Name }}
-    spec:
       containers:
         - resources: {}
           terminationMessagePath: /dev/termination-log
@@ -35,6 +30,9 @@ spec:
             - containerPort: {{ .Values.containers.containerPort }}
               protocol: TCP
           imagePullPolicy: IfNotPresent
+           volumeMounts:
+           - name: index-html
+             mountPath: /tmp/html
 # update with the image you build in part 1
           # image: 'quay.io/jonatang/app-dev-lab:v1'
       restartPolicy: Always
