@@ -7,3 +7,23 @@ containers:
 
 service:
   servicePort: 8080
+
+volume:
+  mount:
+    path: /tmp/html # this will mount the html.index file to it application location
+
+probes:
+  readiness:
+    path: Application/helm
+    initialDelaySeconds: 1 # the time is waiting befor testing the application path
+    timeoutSeconds: 1 # the time for timeout
+    periodSeconds: 10 # the abount of time to wait between checks
+    successThreshold: 1 # count to decalre seccessfull 
+    failureThreshold: 3 # count to decalre failure 
+  liveness:
+    path: Application/helm
+    initialDelaySeconds: 1 # the time is waiting befor testing the application path
+    timeoutSeconds: 1 # the time for timeout
+    periodSeconds: 10 # the abount of time to wait between checks
+    successThreshold: 1 # count to decalre seccessfull 
+    failureThreshold: 3 # count to decalre failure 
