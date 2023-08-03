@@ -33,7 +33,7 @@ data:
       </div>
     </nav>
         <div class="jumbotron"  style="padding:40px;">
-          <h1>Hello, worldddd!</h1>
+          <h1>Hello, world!</h1>
           <p>This is a simple hello World Web Page, this message will be modiifed.</p>
           <p><a class="btn btn-primary btn-lg" href="/liveliness/400" role="button">Not Healty</a></p>
           <p><a class="btn btn-primary btn-lg" href="/health/liveliness" role="button">Check liveliness</a></p>
