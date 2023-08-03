@@ -46,6 +46,9 @@ spec:
                       periodSeconds: 10
                       successThreshold: 1
                       failureThreshold: 3
+          env:
+                      - name: PORT
+                        value: {{ .Values.containers.containerPort | quote }}
           volumeMounts:
             - name: index-html
               mountPath: /tmp/html # this will mount the html.index file to it application location
