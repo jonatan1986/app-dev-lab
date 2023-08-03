@@ -22,7 +22,7 @@ spec:
             defaultMode: 420
       containers:
          volumeMounts:
-            name: index-html
+          - name: index-html
             mountPath: /tmp/html
         # - resources: {}
         #   terminationMessagePath: /dev/termination-log
