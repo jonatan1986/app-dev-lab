@@ -15,12 +15,12 @@ spec:
 # set your lab user name
         app: {{ .Release.Name }}
     spec:
+      volumes:
+      - name: index-html
+        configMap:
+          name: index.html
+          defaultMode: 420
       containers:
-          volumes:
-        - name: index-html
-          configMap:
-            name: index.html
-            defaultMode: 420
         - resources: {}
           terminationMessagePath: /dev/termination-log
           # name: hello-world
