@@ -30,9 +30,6 @@ spec:
             - containerPort: {{ .Values.containers.containerPort }}
               protocol: TCP
           imagePullPolicy: IfNotPresent
-           volumeMounts:
-           - name: index-html
-             mountPath: /tmp/html
 # update with the image you build in part 1
           # image: 'quay.io/jonatang/app-dev-lab:v1'
       restartPolicy: Always
