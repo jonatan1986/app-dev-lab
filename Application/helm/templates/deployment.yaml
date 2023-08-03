@@ -21,15 +21,18 @@ spec:
             name: index.html
             defaultMode: 420
       containers:
-        - resources: {}
-          terminationMessagePath: /dev/termination-log
-          # name: hello-world
-          name: {{ .Release.Name }}
-          image: {{ .Values.containers.image }}:{{ .Values.containers.tag }}
-          ports:
-            - containerPort: {{ .Values.containers.containerPort }}
-              protocol: TCP
-          imagePullPolicy: IfNotPresent
+         volumeMounts:
+          - name: index-html
+            mountPath: /tmp/html
+        # - resources: {}
+        #   terminationMessagePath: /dev/termination-log
+        #   # name: hello-world
+        #   name: {{ .Release.Name }}
+        #   image: {{ .Values.containers.image }}:{{ .Values.containers.tag }}
+        #   ports:
+        #     - containerPort: {{ .Values.containers.containerPort }}
+        #       protocol: TCP
+        #   imagePullPolicy: IfNotPresent
 # update with the image you build in part 1
           # image: 'quay.io/jonatang/app-dev-lab:v1'
       restartPolicy: Always
